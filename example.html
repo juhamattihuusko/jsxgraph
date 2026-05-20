@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My JSXGraph</title>
+
+  <!-- Load JSXGraph from CDN (no installation needed) -->
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <style>
+    body { display: flex; justify-content: center; padding: 2rem; font-family: sans-serif; }
+    #box { width: 600px; height: 600px; }
+  </style>
+</head>
+<body>
+  <div id="box" class="jxgbox"></div>
+
+  <script>
+    const board = JXG.JSXGraph.initBoard('box', {
+      boundingbox: [-5, 5, 5, -5],
+      axis: true
+    });
+
+    // Example: draggable point + circle
+    const p = board.create('point', [2, 1], { name: 'P', color: 'blue' });
+    const c = board.create('circle', [p, 2], { strokeColor: 'red' });
+  </script>
+</body>
+</html>
